@@ -1,0 +1,69 @@
+/* Desktop configuration (default rules are mostly for desktop) */
+@media (min-width: 1025px) {
+  main.container {
+    max-width: 860px;
+  }
+}
+
+/* Tablet (641px to 1024px) */
+@media (max-width: 1024px) {
+  main.container {
+    max-width: 640px;
+    padding: 1.5rem;
+  }
+  
+  .bg-blob {
+    filter: blur(60px);
+  }
+}
+
+/* Mobile (<= 640px) */
+@media (max-width: 640px) {
+  :root {
+    --radius-lg: 20px;
+  }
+
+  main.container {
+    padding: 1rem;
+    gap: 1rem;
+  }
+
+  header {
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
+    text-align: center;
+  }
+
+  .settings-bar {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* Reduce padding on cards for mobile screens */
+  .glass-card {
+    padding: 1.25rem !important;
+    overflow-wrap: break-word;
+    word-break: normal;
+  }
+
+  /* Make items take full width if they stack */
+  .typing-area-container {
+    padding: 1.25rem !important;
+  }
+  
+  .bg-blob {
+    filter: blur(40px);
+    opacity: 0.18;
+  }
+}
+
+/* Extra Small Mobile (<= 380px) */
+@media (max-width: 380px) {
+  .glass-card, .typing-area-container {
+    padding: 1rem !important;
+  }
+  .select-label {
+    white-space: nowrap;
+  }
+}

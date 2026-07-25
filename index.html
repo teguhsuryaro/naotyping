@@ -1,33 +1,122 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="google-site-verification" content="WmgPiD79u4Fay0erImMaBu9rgnX4x2xKhIcu_RvXmVk" />
-    <title>Typing Test Project</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Naotyping — Latihan Mengetik Cepat dan Akurat</title>
+  <meta name="description" content="Uji dan latih kecepatan mengetikmu selama 60 detik. Lihat performamu langsung lewat animasi interaktif, tanpa perlu login atau menyimpan data." />
+  <link rel="canonical" href="https://naotyping.example.com/" />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#4F5DFF" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Naotyping — Latihan Mengetik Cepat dan Akurat" />
+  <meta property="og:description" content="Uji dan latih kecepatan mengetikmu selama 60 detik dengan animasi interaktif." />
+  <meta property="og:image" content="/og-image.png" />
+  <meta property="og:locale" content="id_ID" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Naotyping — Latihan Mengetik Cepat dan Akurat" />
+  <meta name="twitter:description" content="Uji dan latih kecepatan mengetikmu selama 60 detik dengan animasi interaktif." />
+  <meta name="twitter:image" content="/og-image.png" />
+  
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 </head>
 <body>
+  <!-- Pure CSS Background Blobs (z-index: 0) -->
+  <div class="bg-blob-container">
+    <div class="bg-blob blob-pink"></div>
+    <div class="bg-blob blob-mint"></div>
+    <div class="bg-blob blob-yellow"></div>
+    <div class="bg-blob blob-purple"></div>
+  </div>
 
-    <div class="container">
-        <h1>Typing Normies</h1>
-        
-        <div class="stats">
-            <div class="stat-box">WPM: <span id="wpm">0</span></div>
-            <div class="stat-box">Akurasi: <span id="accuracy">100</span>%</div>
-            <div class="stat-box">Waktu: <span id="timer">60</span>s</div>
+  <main class="container">
+    <!-- Header with logo and settings -->
+    <header>
+      <h1 class="brand-title" data-i18n="app.title">Naotyping</h1>
+      
+      <div class="settings-bar">
+        <!-- UI Language Selector -->
+        <div class="select-wrapper">
+          <label for="ui-lang-select" class="select-label" data-i18n="language.ui.label">
+            <svg class="ph-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+            Bahasa
+          </label>
+          <div class="select-container">
+            <select id="ui-lang-select" class="select-custom" aria-label="UI Language">
+              <option value="id">Indonesia</option>
+              <option value="en">English</option>
+            </select>
+          </div>
         </div>
 
-        <div id="quote-display" class="quote-display">
+        <!-- Practice Content Language Selector -->
+        <div class="select-wrapper">
+          <label for="content-lang-select" class="select-label" data-i18n="language.content.label">
+            <svg class="ph-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2" ry="2"/><line x1="6" y1="8" x2="6.01" y2="8"/><line x1="10" y1="8" x2="10.01" y2="8"/><line x1="14" y1="8" x2="14.01" y2="8"/><line x1="18" y1="8" x2="18.01" y2="8"/><line x1="6" y1="12" x2="6.01" y2="12"/><line x1="10" y1="12" x2="10.01" y2="12"/><line x1="14" y1="12" x2="14.01" y2="12"/><line x1="18" y1="12" x2="18.01" y2="12"/><line x1="7" y1="16" x2="17" y2="16"/></svg>
+            Latihan
+          </label>
+          <div class="select-container">
+            <select id="content-lang-select" class="select-custom" aria-label="Practice Language">
+              <option value="id">Indonesia</option>
+              <option value="en">English</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Creature Evolution Arena -->
+    <section id="creature-arena" aria-label="Visual Live Score Mascot Animation" class="glass-card stage-0"></section>
+
+    <!-- Typing Card -->
+    <section id="typing-card" class="glass-card fade-in">
+      <div class="typing-area-container">
+        <!-- Timer Widget -->
+        <div class="typing-card-header">
+          <div id="timer-container" class="timer-widget">
+            <svg class="ph-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            <span id="timer-value">60</span>
+            <span data-i18n="timer.unit">detik</span>
+          </div>
         </div>
 
-        <textarea id="quote-input" class="quote-input" autofocus placeholder="Mulai mengetik di sini..."></textarea>
+        <!-- Words List Display -->
+        <div id="words-display" class="words-display-box" aria-live="polite"></div>
 
-        <button id="start-btn">Ulangi</button>
+        <!-- Input Area -->
+        <label for="typing-input" class="sr-only">Area mengetik</label>
+        <textarea 
+          id="typing-input" 
+          class="typing-input-box" 
+          autofocus 
+          placeholder="Mulai mengetik di sini..."
+          data-i18n="results.placeholder"
+          autocapitalize="off" 
+          autocomplete="off" 
+          autocorrect="off" 
+          spellcheck="false"
+        ></textarea>
+      </div>
+    </section>
 
-        <div class="copyright">&copy; 2026 Typing Normies Project v1.0.1 . Crafted by Surya Ganteng.</div>
-    </div>
+    <!-- Results Card (initially hidden) -->
+    <section id="results-card" class="glass-card fade-out" style="display: none; padding: 2rem;"></section>
+  </main>
 
-    <script src="script.js"></script>
+  <!-- Footer -->
+  <footer>
+    <p class="footer-text">
+      <span data-i18n="footer.copyrightPrefix"></span>
+      <!-- TODO: isi href tujuan Naotik Labs -->
+      <a href="https://naotik-labs.vercel.app" class="footer-link" data-i18n="footer.brandName" target="_blank" rel="noopener noreferrer"></a>
+    </p>
+  </footer>
+
+  <!-- Entry Point script linking -->
+  <script type="module" src="/src/main.ts"></script>
 </body>
 </html>

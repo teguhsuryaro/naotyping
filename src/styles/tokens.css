@@ -1,0 +1,93 @@
+/* Font Face Declarations (Self-hosted from public/fonts/) */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/plus-jakarta-sans-latin-400-normal.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('/fonts/plus-jakarta-sans-latin-600-normal.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('/fonts/plus-jakarta-sans-latin-700-normal.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Baloo 2';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('/fonts/baloo-2-latin-700-normal.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Baloo 2';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url('/fonts/baloo-2-latin-800-normal.woff2') format('woff2');
+}
+
+:root {
+  /* Latar halaman */
+  --bg-gradient-from: #EFF2FC;
+  --bg-gradient-via:  #E7ECFB;
+  --bg-gradient-to:   #F3EAFB;
+
+  /* Permukaan kaca (glass surface) */
+  --surface-glass: rgba(255, 255, 255, 0.60);
+  --surface-glass-strong: rgba(255, 255, 255, 0.78);
+  --surface-glass-border: rgba(255, 255, 255, 0.55);
+
+  /* Teks */
+  --text-heading: #1C1B33;
+  --text-body: #4B4A66;
+  --text-muted: #8886A3;
+  --text-on-accent: #FFFFFF;
+
+  /* Aksen utama */
+  --accent-primary: #4F5DFF;
+  --accent-primary-hover: #3E4BEF;
+  --accent-primary-soft: #E4E6FF;
+
+  /* Aksen sekunder */
+  --accent-pink: #FF7AB6;
+  --accent-yellow: #FFC24B;
+  --accent-mint: #33D6B0;
+  --accent-coral: #FF7A59;
+  --accent-purple: #9B7BFF;
+
+  /* Status pengetikan */
+  --state-correct: #2FBE8F;
+  --state-incorrect: #FF5C6A;
+  --state-active-word-bg: rgba(79, 93, 255, 0.12);
+
+  /* Bayangan */
+  --shadow-soft: 0 1px 2px rgba(45, 41, 92, 0.06), 0 8px 20px rgba(45, 41, 92, 0.08);
+  --shadow-glass: 0 2px 4px rgba(45, 41, 92, 0.08), 0 16px 40px rgba(45, 41, 92, 0.14);
+  --shadow-button: 0 1px 2px rgba(79, 93, 255, 0.20), 0 8px 18px rgba(79, 93, 255, 0.22);
+
+  /* Bentuk & Elevasi */
+  --radius-sm: 12px;
+  --radius-md: 18px;
+  --radius-lg: 28px;
+  --radius-pill: 999px;
+  --blur-glass: 18px;
+
+  /* Skala ukuran font */
+  --fs-display: clamp(1.5rem, 5.5vw, 2.5rem);
+  --fs-heading: clamp(1.1rem, 4vw, 1.5rem);
+  --fs-body: clamp(0.95rem, 3vw, 1.05rem);
+  --fs-small: clamp(0.75rem, 2.2vw, 0.85rem);
+}

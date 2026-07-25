@@ -1,0 +1,19 @@
+{
+  "app.title": "Naotyping",
+  "button.restart": "Ulangi",
+  "language.ui.label": "Bahasa Antarmuka",
+  "language.content.label": "Bahasa Latihan",
+  "stats.wpm": "Kata per Menit",
+  "stats.accuracy": "Akurasi",
+  "stats.correctChars": "Karakter Benar",
+  "stats.incorrectChars": "Karakter Salah",
+  "stats.rawWpm": "Kecepatan Kotor",
+  "stats.consistency": "Konsistensi",
+  "results.placeholder": "Hasil akan muncul di sini setelah kamu selesai mengetik.",
+  "timer.unit": "detik",
+  "footer.copyrightPrefix": "© 2026 Naotyping. Dibuat oleh ",
+  "footer.brandName": "Naotik Labs",
+  "consistency.stable": "Stabil",
+  "consistency.fair": "Cukup Stabil",
+  "consistency.fluctuating": "Fluktuatif"
+}

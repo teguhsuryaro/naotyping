@@ -1,0 +1,23 @@
+{
+  "code": "id",
+  "label": "Bahasa Indonesia",
+  "words": [
+    "aku", "kamu", "dia", "ini", "itu", "apa", "ada", "mau", "bisa", "suka",
+    "lari", "main", "buku", "meja", "kursi", "pagi", "siang", "sore", "malam", "rumah",
+    "jalan", "makan", "minum", "tidur", "kerja", "teman", "bapak", "ibu", "adik", "kakak",
+    "senang", "cepat", "lambat", "besar", "kecil", "baru", "lama", "warna", "merah", "biru",
+    "hijau", "putih", "hitam", "angin", "hujan", "panas", "dingin", "laut", "gunung", "kota",
+    "desa", "baca", "tulis", "hitung", "uang", "pasar", "toko", "mobil", "motor", "kaki",
+    "mata", "tangan", "kepala", "badan", "gigi", "pohon", "daun", "bunga", "hutan", "sungai",
+    "danau", "pulau", "negara", "rakyat", "dunia", "kertas", "pena", "pensil", "tas", "baju",
+    "topi", "kaca", "cermin", "sendok", "garpu", "piring", "gelas", "wajan", "dapur", "kamar",
+    "kasur", "bantal", "guling", "sabun", "shampo", "handuk", "kucing", "anjing", "burung", "kuda",
+    "sapi", "kambing", "bebek", "semut", "nyamuk", "lalat", "lebah", "cacing", "ular", "buaya",
+    "gajah", "singa", "monyet", "tupai", "katak", "madu", "keju", "susu", "roti", "nasi",
+    "gula", "garam", "kopi", "teh", "ikan", "ayam", "pintu", "jendela", "lampu", "api",
+    "tanah", "langit", "awan", "baik", "buruk", "benar", "salah", "hari", "sedih", "marah",
+    "tenang", "kaya", "miskin", "tua", "muda", "sepi", "ramai", "luas", "sempit", "berat",
+    "ringan", "tinggi", "rendah", "kasar", "halus", "tajam", "tumpul", "gelap", "terang", "bersih",
+    "kotor", "rapi", "jelek", "bagus", "indah"
+  ]
+}

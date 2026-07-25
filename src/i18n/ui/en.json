@@ -1,0 +1,19 @@
+{
+  "app.title": "Naotyping",
+  "button.restart": "Restart",
+  "language.ui.label": "UI Language",
+  "language.content.label": "Practice Language",
+  "stats.wpm": "Words per Minute",
+  "stats.accuracy": "Accuracy",
+  "stats.correctChars": "Correct Characters",
+  "stats.incorrectChars": "Incorrect Characters",
+  "stats.rawWpm": "Raw Speed",
+  "stats.consistency": "Consistency",
+  "results.placeholder": "Results will appear here after you finish typing.",
+  "timer.unit": "seconds",
+  "footer.copyrightPrefix": "© 2026 Naotyping. Made by ",
+  "footer.brandName": "Naotik Labs",
+  "consistency.stable": "Steady",
+  "consistency.fair": "Fairly Steady",
+  "consistency.fluctuating": "Fluctuating"
+}

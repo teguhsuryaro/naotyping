@@ -1,0 +1,113 @@
+.results-card-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  width: 100%;
+}
+
+.results-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  width: 100%;
+}
+
+@media (min-width: 641px) {
+  .results-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.result-box {
+  background: rgba(255, 255, 255, 0.45);
+  border: 1px solid var(--surface-glass-border);
+  border-radius: var(--radius-md);
+  padding: 16px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  box-shadow: var(--shadow-soft);
+  transition: transform 0.3s ease;
+}
+
+.result-box:hover {
+  transform: translateY(-3px);
+}
+
+.result-value {
+  font-family: 'Baloo 2', 'Plus Jakarta Sans', sans-serif;
+  font-size: 2.2rem;
+  font-weight: 800;
+  line-height: 1;
+  color: var(--accent-primary);
+}
+
+.result-label {
+  font-size: var(--fs-small);
+  color: var(--text-body);
+  font-weight: 600;
+}
+
+.result-meta {
+  font-size: var(--fs-small);
+  margin-top: 4px;
+}
+
+/* Accuracy, correctness colors */
+.result-box-wpm .result-value {
+  color: var(--accent-primary);
+}
+.result-box-accuracy .result-value {
+  color: var(--state-correct);
+}
+.result-box-correct .result-value {
+  color: var(--state-correct);
+}
+.result-box-incorrect .result-value {
+  color: var(--state-incorrect);
+}
+.result-box-raw .result-value {
+  color: var(--accent-purple);
+}
+.result-box-consistency .result-value {
+  font-size: 1.5rem;
+  padding: 4px 12px;
+  border-radius: var(--radius-pill);
+}
+
+.consistency-stable {
+  background: rgba(51, 214, 176, 0.15);
+  color: var(--accent-mint) !important;
+}
+
+.consistency-fair {
+  background: rgba(255, 194, 75, 0.15);
+  color: var(--accent-yellow) !important;
+}
+
+.consistency-fluctuating {
+  background: rgba(255, 122, 89, 0.15);
+  color: var(--accent-coral) !important;
+}
+
+/* Animations transitions */
+.fade-out {
+  opacity: 0;
+  transform: scale(0.97);
+  pointer-events: none;
+}
+
+.fade-in {
+  opacity: 1;
+  transform: scale(1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .result-box:hover {
+    transform: none;
+  }
+}
