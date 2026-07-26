@@ -11,10 +11,6 @@
     max-width: 640px;
     padding: 1.5rem;
   }
-  
-  .bg-blob {
-    filter: blur(60px);
-  }
 }
 
 /* Mobile (<= 640px) */
@@ -49,12 +45,29 @@
 
   /* Make items take full width if they stack */
   .typing-area-container {
-    padding: 1.25rem !important;
+    padding: 1rem !important;
   }
   
-  .bg-blob {
-    filter: blur(40px);
-    opacity: 0.18;
+  /* Text box sizing on mobile */
+  .words-display-box {
+    padding: 12px 16px;
+  }
+  
+  .word {
+    font-size: 1.2rem;
+    padding: 0px 2px;
+    margin: 2px 0;
+  }
+  
+  .typing-input-box {
+    font-size: 1.1rem;
+    height: 70px;
+    padding: 12px 16px;
+  }
+
+  /* Reduce fire particle performance impact on mobile */
+  .fire-particle {
+    filter: none;
   }
 }
 

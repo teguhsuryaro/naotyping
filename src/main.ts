@@ -6,7 +6,7 @@ import './styles/responsive.css';
 
 // Import Modules
 import { TypingEngineImpl } from './engine/typingEngine.ts';
-import { CreatureAnimationImpl } from './creature/creature.ts';
+import { FireBackgroundImpl } from './fire/fireBackground.ts';
 import { ResultsCardImpl } from './results/resultsCard.ts';
 import { LanguageManager } from './ui/languageSwitcher.ts';
 import { LayoutManager } from './ui/layout.ts';
@@ -19,9 +19,9 @@ document.addEventListener('DOMContentLoaded', () => {
   // 2. Initialize Core Engine
   const typingEngine = new TypingEngineImpl(layout.typingInput, layout.wordsDisplay);
   
-  // 3. Initialize Creature Animation
-  const creature = new CreatureAnimationImpl();
-  creature.mount(layout.creatureArena);
+  // 3. Initialize Fire Background
+  const fire = new FireBackgroundImpl();
+  fire.mount(layout.fireContainer);
   
   // 4. Initialize Results Card
   const resultsCard = new ResultsCardImpl(languageManager);
@@ -37,8 +37,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // Update Timer display
     layout.updateTimer(tick.timeLeftSec);
     
-    // Update Creature visual stage
-    creature.handleTick(tick);
+    // Update Fire Background
+    fire.handleTick(tick);
     
     // Log tick for consistency calculation in results card
     resultsCard.registerTick(tick.rollingWpm);
@@ -51,12 +51,15 @@ document.addEventListener('DOMContentLoaded', () => {
     // Show results
     layout.showResultsArea();
     resultsCard.show(result);
+    
+    // Reset fire background
+    fire.reset();
   });
   
   // 6. Connect Results Actions (Restart)
   resultsCard.onRestart(() => {
     resultsCard.hide();
-    creature.reset();
+    fire.reset();
     typingEngine.reset();
     layout.showTypingArea();
     languageManager.setContentSelectDisabled(false);

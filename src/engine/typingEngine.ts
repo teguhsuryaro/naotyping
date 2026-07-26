@@ -27,6 +27,7 @@ export class TypingEngineImpl {
   
   private timerIntervalId: number | null = null;
   private previousRollingWpm: number = 0;
+  private typingAudio: HTMLAudioElement;
   
   constructor(
     inputElement: HTMLInputElement | HTMLTextAreaElement,
@@ -34,6 +35,9 @@ export class TypingEngineImpl {
   ) {
     this.inputElement = inputElement;
     this.displayElement = displayElement;
+    
+    this.typingAudio = new Audio('/audio/keystroke.wav');
+    this.typingAudio.volume = 0.15;
     
     this.state = this.getInitialState();
     this.setupListeners();
@@ -106,6 +110,10 @@ export class TypingEngineImpl {
   private handleInput(): void {
     if (this.state.isFinished) return;
     
+    // Play sound on typing
+    this.typingAudio.currentTime = 0;
+    this.typingAudio.play().catch(() => {});
+    
     const inputValue = this.inputElement.value;
     
     // Auto-start on the first typed character
@@ -172,7 +180,17 @@ export class TypingEngineImpl {
   
   private generateAndRenderWords(): void {
     this.displayElement.innerHTML = '';
-    const words = getRandomWords(this.wordBank, 15);
+    
+    // Responsive word count to fit roughly 3 lines
+    const width = window.innerWidth;
+    let wordCount = 24; // Desktop
+    if (width <= 640) {
+      wordCount = 12; // Mobile
+    } else if (width <= 1024) {
+      wordCount = 18; // Tablet
+    }
+    
+    const words = getRandomWords(this.wordBank, wordCount);
     
     words.forEach((word, index) => {
       const span = document.createElement('span');

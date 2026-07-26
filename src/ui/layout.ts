@@ -5,7 +5,7 @@ export class LayoutManager {
   public wordsDisplay: HTMLElement;
   public typingInput: HTMLTextAreaElement;
   
-  public creatureArena: HTMLElement;
+  public fireContainer: HTMLElement;
   public typingCard: HTMLElement;
   public resultsCard: HTMLElement;
   
@@ -19,7 +19,7 @@ export class LayoutManager {
     this.wordsDisplay = document.getElementById('words-display') as HTMLElement;
     this.typingInput = document.getElementById('typing-input') as HTMLTextAreaElement;
     
-    this.creatureArena = document.getElementById('creature-arena') as HTMLElement;
+    this.fireContainer = document.getElementById('fire-container') as HTMLElement;
     this.typingCard = document.getElementById('typing-card') as HTMLElement;
     this.resultsCard = document.getElementById('results-card') as HTMLElement;
     

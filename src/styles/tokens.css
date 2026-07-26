@@ -40,26 +40,26 @@
 }
 
 :root {
-  /* Latar halaman */
-  --bg-gradient-from: #EFF2FC;
-  --bg-gradient-via:  #E7ECFB;
-  --bg-gradient-to:   #F3EAFB;
+  /* Latar halaman — Windows 11 Dark Mode inspired */
+  --bg-deep: #202020;
+  --bg-surface: #282828;
+  --bg-elevated: #333333;
 
-  /* Permukaan kaca (glass surface) */
-  --surface-glass: rgba(255, 255, 255, 0.60);
-  --surface-glass-strong: rgba(255, 255, 255, 0.78);
-  --surface-glass-border: rgba(255, 255, 255, 0.55);
+  /* Permukaan Solid/Subtle Glass */
+  --surface-glass: #2C2C2C;
+  --surface-glass-strong: #333333;
+  --surface-glass-border: rgba(255, 255, 255, 0.08);
 
-  /* Teks */
-  --text-heading: #1C1B33;
-  --text-body: #4B4A66;
-  --text-muted: #8886A3;
-  --text-on-accent: #FFFFFF;
+  /* Teks — terang di atas gelap */
+  --text-heading: #FFFFFF;
+  --text-body: #E0E0E0;
+  --text-muted: #9E9E9E;
+  --text-on-accent: #000000;
 
-  /* Aksen utama */
-  --accent-primary: #4F5DFF;
-  --accent-primary-hover: #3E4BEF;
-  --accent-primary-soft: #E4E6FF;
+  /* Aksen utama (Cyan / Teal) */
+  --accent-primary: #1CE3B4;
+  --accent-primary-hover: #15B892;
+  --accent-primary-soft: rgba(28, 227, 180, 0.15);
 
   /* Aksen sekunder */
   --accent-pink: #FF7AB6;
@@ -68,22 +68,28 @@
   --accent-coral: #FF7A59;
   --accent-purple: #9B7BFF;
 
-  /* Status pengetikan */
-  --state-correct: #2FBE8F;
-  --state-incorrect: #FF5C6A;
-  --state-active-word-bg: rgba(79, 93, 255, 0.12);
+  /* Warna api (tetap dipertahankan untuk animasi) */
+  --fire-ember: #FF4500;
+  --fire-orange: #FF6B35;
+  --fire-yellow: #FFD060;
+  --fire-glow: rgba(255, 120, 40, 0.3);
 
-  /* Bayangan */
-  --shadow-soft: 0 1px 2px rgba(45, 41, 92, 0.06), 0 8px 20px rgba(45, 41, 92, 0.08);
-  --shadow-glass: 0 2px 4px rgba(45, 41, 92, 0.08), 0 16px 40px rgba(45, 41, 92, 0.14);
-  --shadow-button: 0 1px 2px rgba(79, 93, 255, 0.20), 0 8px 18px rgba(79, 93, 255, 0.22);
+  /* Status pengetikan */
+  --state-correct: var(--accent-primary);
+  --state-incorrect: #FF5C6A;
+  --state-active-word-bg: rgba(255, 255, 255, 0.1);
+
+  /* Bayangan — clean flat look */
+  --shadow-soft: 0 4px 12px rgba(0, 0, 0, 0.25);
+  --shadow-glass: 0 8px 24px rgba(0, 0, 0, 0.35);
+  --shadow-button: none;
 
   /* Bentuk & Elevasi */
-  --radius-sm: 12px;
-  --radius-md: 18px;
-  --radius-lg: 28px;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
   --radius-pill: 999px;
-  --blur-glass: 18px;
+  --blur-glass: 0px; /* Non-glassy for Win11 flat look */
 
   /* Skala ukuran font */
   --fs-display: clamp(1.5rem, 5.5vw, 2.5rem);

@@ -7,7 +7,7 @@
   <meta name="description" content="Uji dan latih kecepatan mengetikmu selama 60 detik. Lihat performamu langsung lewat animasi interaktif, tanpa perlu login atau menyimpan data." />
   <link rel="canonical" href="https://naotyping.example.com/" />
   <meta name="robots" content="index, follow" />
-  <meta name="theme-color" content="#4F5DFF" />
+  <meta name="theme-color" content="#0B0E1A" />
 
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website" />
@@ -25,13 +25,8 @@
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 </head>
 <body>
-  <!-- Pure CSS Background Blobs (z-index: 0) -->
-  <div class="bg-blob-container">
-    <div class="bg-blob blob-pink"></div>
-    <div class="bg-blob blob-mint"></div>
-    <div class="bg-blob blob-yellow"></div>
-    <div class="bg-blob blob-purple"></div>
-  </div>
+  <!-- Fire Background (z-index: 1) -->
+  <div id="fire-container"></div>
 
   <main class="container">
     <!-- Header with logo and settings -->
@@ -68,9 +63,6 @@
         </div>
       </div>
     </header>
-
-    <!-- Creature Evolution Arena -->
-    <section id="creature-arena" aria-label="Visual Live Score Mascot Animation" class="glass-card stage-0"></section>
 
     <!-- Typing Card -->
     <section id="typing-card" class="glass-card fade-in">
@@ -111,7 +103,6 @@
   <footer>
     <p class="footer-text">
       <span data-i18n="footer.copyrightPrefix"></span>
-      <!-- TODO: isi href tujuan Naotik Labs -->
       <a href="https://naotik-labs.vercel.app" class="footer-link" data-i18n="footer.brandName" target="_blank" rel="noopener noreferrer"></a>
     </p>
   </footer>

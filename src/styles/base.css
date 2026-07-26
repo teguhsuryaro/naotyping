@@ -5,11 +5,8 @@
 }
 
 body {
-  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
-  background-color: var(--bg-gradient-from);
-  background-image: radial-gradient(at 0% 0%, var(--bg-gradient-from) 0px, transparent 50%),
-                    radial-gradient(at 50% 0%, var(--bg-gradient-via) 0px, transparent 50%),
-                    radial-gradient(at 100% 100%, var(--bg-gradient-to) 0px, transparent 50%);
+  font-family: 'Segoe UI Variable Text', 'Segoe UI', system-ui, -apple-system, sans-serif;
+  background-color: var(--bg-deep);
   color: var(--text-body);
   min-height: 100vh;
   min-height: 100dvh;
@@ -19,58 +16,6 @@ body {
   align-items: center;
   overflow-x: hidden;
   position: relative;
-}
-
-/* Background Blobs */
-.bg-blob-container {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  z-index: 0;
-  overflow: hidden;
-  pointer-events: none;
-}
-
-.bg-blob {
-  position: absolute;
-  border-radius: 50%;
-  filter: blur(80px);
-  opacity: 0.25;
-  will-change: transform;
-}
-
-.blob-pink {
-  width: 350px;
-  height: 350px;
-  background-color: var(--accent-pink);
-  top: -100px;
-  left: -50px;
-}
-
-.blob-mint {
-  width: 400px;
-  height: 400px;
-  background-color: var(--accent-mint);
-  bottom: -150px;
-  left: 10%;
-}
-
-.blob-yellow {
-  width: 300px;
-  height: 300px;
-  background-color: var(--accent-yellow);
-  top: 25%;
-  right: -100px;
-}
-
-.blob-purple {
-  width: 450px;
-  height: 450px;
-  background-color: var(--accent-purple);
-  bottom: -50px;
-  right: -150px;
 }
 
 main.container {
@@ -85,23 +30,20 @@ main.container {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Baloo 2', 'Plus Jakarta Sans', system-ui, sans-serif;
-  font-weight: 800;
+  font-family: 'Segoe UI Variable Display', 'Segoe UI', system-ui, sans-serif;
+  font-weight: 600;
   color: var(--text-heading);
 }
 
 .brand-title {
-  background: linear-gradient(120deg, var(--accent-primary) 0%, var(--accent-purple) 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  font-family: 'Baloo 2', sans-serif;
-  font-weight: 800;
+  color: var(--text-heading); /* Flat color instead of gradient for Windows 11 clean look */
+  font-family: 'Segoe UI Variable Display', 'Segoe UI', sans-serif;
+  font-weight: 600;
 }
 
 @supports not (background-clip: text) {
   .brand-title {
-    color: var(--accent-primary);
+    color: var(--fire-orange);
   }
 }
 
@@ -147,14 +89,14 @@ footer {
 }
 
 .footer-link {
-  color: var(--accent-primary);
+  color: var(--fire-orange);
   font-weight: 700;
   text-decoration: none;
   transition: color 0.2s ease, text-decoration-color 0.2s ease;
 }
 
 .footer-link:hover {
-  color: var(--accent-purple);
+  color: var(--fire-yellow);
   text-decoration: underline;
   text-decoration-thickness: 2px;
   text-underline-offset: 4px;
