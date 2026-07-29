@@ -1,7 +1,7 @@
 /* Desktop configuration (default rules are mostly for desktop) */
 @media (min-width: 1025px) {
   main.container {
-    max-width: 860px;
+    max-width: 1000px;
   }
 }
 
@@ -45,7 +45,7 @@
 
   /* Make items take full width if they stack */
   .typing-area-container {
-    padding: 1rem !important;
+    padding: 1.25rem !important;
   }
   
   /* Text box sizing on mobile */

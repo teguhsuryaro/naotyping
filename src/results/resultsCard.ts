@@ -79,25 +79,41 @@ export class ResultsCardImpl implements ResultsCard {
           <!-- Correct Chars -->
           <div class="result-box result-box-correct">
             <span class="result-value" id="res-correct">0</span>
-            <span class="result-label" data-i18n="stats.correctChars">${this.languageManager.translateText('stats.correctChars')}</span>
+            <span class="result-label tooltip-container" data-i18n="stats.correctChars">
+              ${this.languageManager.translateText('stats.correctChars')}
+              <span class="tooltip-icon">ℹ️</span>
+              <span class="tooltip-text">Jumlah karakter yang diketik dengan benar</span>
+            </span>
           </div>
           
           <!-- Incorrect Chars -->
           <div class="result-box result-box-incorrect">
             <span class="result-value" id="res-incorrect">0</span>
-            <span class="result-label" data-i18n="stats.incorrectChars">${this.languageManager.translateText('stats.incorrectChars')}</span>
+            <span class="result-label tooltip-container" data-i18n="stats.incorrectChars">
+              ${this.languageManager.translateText('stats.incorrectChars')}
+              <span class="tooltip-icon">ℹ️</span>
+              <span class="tooltip-text">Jumlah karakter yang diketik salah</span>
+            </span>
           </div>
           
           <!-- Raw WPM -->
           <div class="result-box result-box-raw">
             <span class="result-value" id="res-raw">0</span>
-            <span class="result-label" data-i18n="stats.rawWpm">${this.languageManager.translateText('stats.rawWpm')}</span>
+            <span class="result-label tooltip-container" data-i18n="stats.rawWpm">
+              ${this.languageManager.translateText('stats.rawWpm')}
+              <span class="tooltip-icon">ℹ️</span>
+              <span class="tooltip-text">Kecepatan mengetik sebelum dikurangi kesalahan</span>
+            </span>
           </div>
           
           <!-- Consistency -->
           <div class="result-box result-box-consistency">
             <span class="result-value ${consistency.class}" id="res-consistency">${consistencyText}</span>
-            <span class="result-label" data-i18n="stats.consistency">${this.languageManager.translateText('stats.consistency')}</span>
+            <span class="result-label tooltip-container" data-i18n="stats.consistency">
+              ${this.languageManager.translateText('stats.consistency')}
+              <span class="tooltip-icon">ℹ️</span>
+              <span class="tooltip-text">Stabilitas kecepatan mengetik selama sesi (standar deviasi)</span>
+            </span>
           </div>
         </div>
         

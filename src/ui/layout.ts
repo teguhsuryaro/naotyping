@@ -1,6 +1,7 @@
 export class LayoutManager {
   public timerContainer: HTMLElement;
   public timerValue: HTMLElement;
+  public progressBarFill: HTMLElement;
   
   public wordsDisplay: HTMLElement;
   public typingInput: HTMLTextAreaElement;
@@ -15,6 +16,7 @@ export class LayoutManager {
   constructor() {
     this.timerContainer = document.getElementById('timer-container') as HTMLElement;
     this.timerValue = document.getElementById('timer-value') as HTMLElement;
+    this.progressBarFill = document.getElementById('progress-bar-fill') as HTMLElement;
     
     this.wordsDisplay = document.getElementById('words-display') as HTMLElement;
     this.typingInput = document.getElementById('typing-input') as HTMLTextAreaElement;
@@ -30,6 +32,19 @@ export class LayoutManager {
   public updateTimer(seconds: number): void {
     if (this.timerValue) {
       this.timerValue.textContent = seconds.toString();
+      
+      // Update progress bar
+      const progress = (seconds / 60) * 100;
+      if (this.progressBarFill) {
+        this.progressBarFill.style.width = `${progress}%`;
+        
+        // Change color when <= 10s
+        if (seconds <= 10) {
+          this.progressBarFill.classList.add('warning');
+        } else {
+          this.progressBarFill.classList.remove('warning');
+        }
+      }
       
       // Visual feedback: red glow when timer is <= 10s
       if (seconds <= 10) {
@@ -62,6 +77,12 @@ export class LayoutManager {
     setTimeout(() => {
       this.resultsCard.style.display = 'none';
       this.typingCard.style.display = 'flex';
+      
+      // Reset progress bar
+      if (this.progressBarFill) {
+        this.progressBarFill.style.width = '100%';
+        this.progressBarFill.classList.remove('warning');
+      }
       
       // Force repaint
       this.typingCard.getBoundingClientRect();
